@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db, todoTable} from "../../lib/drizzle"
+import { db, todoTable, Todo, newTodo } from "../../lib/drizzle"
 import { sql } from "@vercel/postgres";
 
 export async function GET(request: NextRequest) {
