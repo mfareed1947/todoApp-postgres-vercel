@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
     await sql`CREATE TABLE IF NOT EXISTS todos(id SERIAL , task VARCHAR(255))`;
     const res = await db.select().from(todoTable);
     console.log(res)
-    return NextResponse.json({ message: res })
+    return NextResponse.json({ data: res })
   } catch (error) {
     console.log((error as { message: string }).message)
     return NextResponse.json({ message: 'apna kaam sahi se check karo' })
